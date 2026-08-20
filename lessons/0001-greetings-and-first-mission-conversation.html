@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 0001: Greetings and First Mission Conversation</title>
+  <link rel="stylesheet" href="../assets/lesson.css" />
+  <script defer src="../assets/quiz.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Lesson 0001: Greetings and First Mission Conversation</h1>
+    <p class="meta">Target time: 5-10 minutes. Mission link: begin understandable spoken interactions from day one.</p>
+
+    <section class="callout">
+      <strong>Tangible win for today:</strong> You can greet someone, ask how they are, introduce yourselves as missionaries, and ask permission to share a message.
+    </section>
+
+    <section class="card">
+      <h2>Knowledge (keep it light)</h2>
+      <p>Memorize this mini-sequence:</p>
+      <ol>
+        <li>Buenos dias. Mucho gusto.</li>
+        <li>Como esta usted?</li>
+        <li>Somos misioneros de La Iglesia de Jesucristo de los Santos de los Ultimos Dias.</li>
+        <li>Podemos compartir un mensaje de Jesucristo?</li>
+      </ol>
+      <p>Reference sheet: <a href="../reference/0001-core-greetings-and-mission-openers.html">Core Greetings and Mission Openers</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Guided practice (retrieval)</h2>
+      <p>Say each line out loud from memory before looking back up:</p>
+      <div class="grid">
+        <div>
+          <p><strong>Prompt A</strong></p>
+          <p>Good morning. Nice to meet you.</p>
+        </div>
+        <div>
+          <p><strong>Prompt B</strong></p>
+          <p>How are you? (formal)</p>
+        </div>
+        <div>
+          <p><strong>Prompt C</strong></p>
+          <p>We are missionaries of The Church of Jesus Christ of Latter-day Saints.</p>
+        </div>
+        <div>
+          <p><strong>Prompt D</strong></p>
+          <p>Can we share a message of Jesus Christ?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="assessment">
+      <h2>End-of-lesson assessment</h2>
+      <p>Type each answer from memory. Mastery target for this lesson: 4/4.</p>
+
+      <div class="quiz-item">
+        <label for="q1">1) Good morning.</label>
+        <input id="q1" type="text" />
+      </div>
+
+      <div class="quiz-item">
+        <label for="q2">2) How are you? (formal)</label>
+        <input id="q2" type="text" />
+      </div>
+
+      <div class="quiz-item">
+        <label for="q3">3) We are missionaries.</label>
+        <input id="q3" type="text" />
+      </div>
+
+      <div class="quiz-item">
+        <label for="q4">4) Can we share a message of Jesus Christ?</label>
+        <input id="q4" type="text" />
+      </div>
+
+      <button id="gradeBtn" type="button">Grade Assessment</button>
+      <div id="result" class="feedback" aria-live="polite"></div>
+      <div id="details"></div>
+    </section>
+
+    <section class="card">
+      <h2>Primary source for this lesson</h2>
+      <p>Listen to and repeat short Spanish speech patterns from <a href="https://www.languagetransfer.org/free-courses-1#complete-spanish">Language Transfer: Complete Spanish</a>. Start with the earliest lessons and repeat out loud.</p>
+      <p class="meta">Why this source: free, structured, speech-first, and practical for quick daily sessions.</p>
+    </section>
+
+    <section class="card">
+      <h2>Spaced follow-up (tomorrow, 3 minutes)</h2>
+      <ul>
+        <li>Say the 4-line sequence from memory twice.</li>
+        <li>If you miss a line, check the reference sheet, then repeat full sequence once more.</li>
+      </ul>
+    </section>
+
+    <section class="callout">
+      <strong>Ask follow-up questions:</strong> Ask your teacher-agent anything unclear, including pronunciation, speed drills, or roleplay for this exact exchange.
+    </section>
+
+    <script>
+      const gradeBtn = document.getElementById("gradeBtn");
+      const result = document.getElementById("result");
+      const details = document.getElementById("details");
+
+      gradeBtn.addEventListener("click", () => {
+        const items = [
+          {
+            prompt: "Good morning.",
+            accepted: ["buenos dias"],
+            userAnswer: () => document.getElementById("q1").value,
+          },
+          {
+            prompt: "How are you? (formal)",
+            accepted: ["como esta", "como esta usted"],
+            userAnswer: () => document.getElementById("q2").value,
+          },
+          {
+            prompt: "We are missionaries.",
+            accepted: ["somos misioneros"],
+            userAnswer: () => document.getElementById("q3").value,
+          },
+          {
+            prompt: "Can we share a message of Jesus Christ?",
+            accepted: ["podemos compartir un mensaje de jesucristo", "podemos compartir un mensaje de jesuscristo"],
+            userAnswer: () => document.getElementById("q4").value,
+          },
+        ];
+
+        const scored = window.quizHelpers.scoreQuiz(items);
+        const passed = scored.correct === scored.total;
+
+        result.className = "feedback " + (passed ? "ok" : "warn");
+        result.textContent = "Score: " + scored.correct + "/" + scored.total + (passed ? " - Mastery reached." : " - Review and retry.");
+
+        const list = document.createElement("ul");
+        scored.details.forEach((d) => {
+          const li = document.createElement("li");
+          li.textContent = (d.isCorrect ? "Correct: " : "Review: ") + d.prompt + (d.isCorrect ? "" : " (target: " + d.expected + ")");
+          list.appendChild(li);
+        });
+
+        details.innerHTML = "";
+        details.appendChild(list);
+      });
+    </script>
+
+    <p class="meta">Next lesson will adapt to weak items from this assessment.</p>
+    <p><a href="0002-names-and-where-you-are-from.html">Go to Lesson 0002: Names and Where You Are From</a></p>
+    <p><a href="0000-course-index.html">Course Index</a></p>
+  </main>
+</body>
+</html>

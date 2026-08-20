@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 0006: Daily Routine</title>
+  <link rel="stylesheet" href="../assets/lesson.css" />
+  <script defer src="../assets/quiz.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Lesson 0006: Daily Routine</h1>
+    <p class="meta">Target time: 5-10 minutes. Mission link: describe a few ordinary actions in a simple sequence.</p>
+
+    <section class="callout"><strong>Tangible win for today:</strong> You can say when you wake up, eat breakfast, study, and go to bed.</section>
+
+    <section class="card">
+      <h2>Knowledge (keep it light)</h2>
+      <p>Memorize this mini-sequence:</p>
+      <ol>
+        <li>Me despierto a las seis.</li>
+        <li>Desayuno a las siete.</li>
+        <li>Estudio espanol por la manana.</li>
+        <li>Me acuesto a las diez.</li>
+      </ol>
+      <p>Reference sheet: <a href="../reference/0006-daily-routine.html">Daily Routine</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Guided practice (retrieval)</h2>
+      <p>Say each line out loud from memory before looking back up:</p>
+      <div class="grid">
+        <div><p><strong>Prompt A</strong></p><p>I wake up at six.</p></div>
+        <div><p><strong>Prompt B</strong></p><p>I eat breakfast at seven.</p></div>
+        <div><p><strong>Prompt C</strong></p><p>I study Spanish in the morning.</p></div>
+        <div><p><strong>Prompt D</strong></p><p>I go to bed at ten.</p></div>
+      </div>
+      <p>Change one time and one activity to match your real routine. Say the sequence twice.</p>
+    </section>
+
+    <section class="card" id="assessment">
+      <h2>End-of-lesson assessment</h2>
+      <p>Type each answer from memory. Mastery target for this lesson: 4/4.</p>
+      <div class="quiz-item"><label for="q1">1) I wake up at six.</label><input id="q1" type="text" /></div>
+      <div class="quiz-item"><label for="q2">2) I eat breakfast at seven.</label><input id="q2" type="text" /></div>
+      <div class="quiz-item"><label for="q3">3) I study Spanish in the morning.</label><input id="q3" type="text" /></div>
+      <div class="quiz-item"><label for="q4">4) I go to bed at ten.</label><input id="q4" type="text" /></div>
+      <button id="gradeBtn" type="button">Grade Assessment</button>
+      <div id="result" class="feedback" aria-live="polite"></div><div id="details"></div>
+    </section>
+
+    <section class="card"><h2>Primary source for this lesson</h2><p>Continue with the early lessons of <a href="https://www.languagetransfer.org/free-courses-1#complete-spanish">Language Transfer: Complete Spanish</a>. Repeat each routine phrase out loud.</p><p class="meta">Why this source: free, structured, speech-first, and practical for quick daily sessions.</p></section>
+    <section class="card"><h2>Spaced follow-up (tomorrow, 3 minutes)</h2><ul><li>Say the four-line routine from memory twice.</li><li>Replace the times with your actual times.</li><li>Review any missed line, then repeat the sequence.</li></ul></section>
+    <section class="callout"><strong>Ask follow-up questions:</strong> Ask your teacher-agent for a routine substitution drill or a timed speaking challenge.</section>
+
+    <script>
+      const gradeBtn = document.getElementById("gradeBtn"); const result = document.getElementById("result"); const details = document.getElementById("details");
+      gradeBtn.addEventListener("click", () => {
+        const items = [
+          { prompt: "I wake up at six.", accepted: ["me despierto a las seis"], userAnswer: () => document.getElementById("q1").value },
+          { prompt: "I eat breakfast at seven.", accepted: ["desayuno a las siete"], userAnswer: () => document.getElementById("q2").value },
+          { prompt: "I study Spanish in the morning.", accepted: ["estudio espanol por la manana"], userAnswer: () => document.getElementById("q3").value },
+          { prompt: "I go to bed at ten.", accepted: ["me acuesto a las diez"], userAnswer: () => document.getElementById("q4").value },
+        ];
+        const scored = window.quizHelpers.scoreQuiz(items); const passed = scored.correct === scored.total;
+        result.className = "feedback " + (passed ? "ok" : "warn"); result.textContent = "Score: " + scored.correct + "/" + scored.total + (passed ? " - Mastery reached." : " - Review and retry.");
+        const list = document.createElement("ul"); scored.details.forEach((d) => { const li = document.createElement("li"); li.textContent = (d.isCorrect ? "Correct: " : "Review: ") + d.prompt + (d.isCorrect ? "" : " (target: " + d.expected + ")"); list.appendChild(li); }); details.innerHTML = ""; details.appendChild(list);
+      });
+    </script>
+    <p class="meta">Next lesson will adapt to weak items from this assessment.</p>
+    <p><a href="0005-conversation-repair.html">Back to Lesson 0005: Conversation Repair</a> | <a href="0007-places-and-directions.html">Go to Lesson 0007: Places and Directions</a></p>
+    <p><a href="0000-course-index.html">Course Index</a></p>
+  </main>
+</body>
+</html>

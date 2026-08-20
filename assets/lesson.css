@@ -1,0 +1,144 @@
+:root {
+  --bg: #f7f4ec;
+  --paper: #fffdf8;
+  --ink: #1f1d1a;
+  --muted: #5b554b;
+  --accent: #0f766e;
+  --accent-soft: #d8f3ef;
+  --line: #ddd5c8;
+  --ok: #166534;
+  --warn: #92400e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 20% 0%, #fffdf8 0%, var(--bg) 65%);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.55;
+}
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Palatino Linotype", Palatino, serif;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  margin-top: 1.6rem;
+  font-size: 1.35rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.25rem;
+}
+
+p,
+li {
+  font-size: 1.03rem;
+}
+
+small,
+.meta {
+  color: var(--muted);
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.callout {
+  border-left: 5px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 0.75rem 0.9rem;
+  margin: 1rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+button {
+  appearance: none;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.55rem;
+  background: #fff;
+  font-size: 0.98rem;
+}
+
+.quiz-item {
+  margin: 0.8rem 0;
+}
+
+.feedback {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.feedback.ok {
+  color: var(--ok);
+}
+
+.feedback.warn {
+  color: var(--warn);
+}
+
+a {
+  color: #0b4f8a;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  button {
+    display: none;
+  }
+
+  main {
+    padding: 0;
+  }
+}

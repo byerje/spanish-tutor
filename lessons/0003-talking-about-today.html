@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 0003: Talking About Today</title>
+  <link rel="stylesheet" href="../assets/lesson.css" />
+  <script defer src="../assets/quiz.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Lesson 0003: Talking About Today</h1>
+    <p class="meta">Target time: 5-10 minutes. Mission link: ask about a person’s day and share one simple plan.</p>
+
+    <section class="callout">
+      <strong>Tangible win for today:</strong> You can ask what someone is doing today, say what you are going to do, and ask a simple follow-up question.
+    </section>
+
+    <section class="card">
+      <h2>Knowledge (keep it light)</h2>
+      <p>Memorize this mini-exchange:</p>
+      <ol>
+        <li>Que hace usted hoy?</li>
+        <li>Hoy voy a trabajar.</li>
+        <li>Y usted?</li>
+        <li>Hoy voy a visitar a una familia.</li>
+      </ol>
+      <p>Reference sheet: <a href="../reference/0003-talking-about-today.html">Talking About Today</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Guided practice (retrieval)</h2>
+      <p>Say each line out loud from memory before looking back up:</p>
+      <div class="grid">
+        <div>
+          <p><strong>Prompt A</strong></p>
+          <p>What are you doing today? (formal)</p>
+        </div>
+        <div>
+          <p><strong>Prompt B</strong></p>
+          <p>Today I am going to work.</p>
+        </div>
+        <div>
+          <p><strong>Prompt C</strong></p>
+          <p>And you?</p>
+        </div>
+        <div>
+          <p><strong>Prompt D</strong></p>
+          <p>Today I am going to visit a family.</p>
+        </div>
+      </div>
+      <p>Replace trabajar and visitar a una familia with one true plan from your day. Say the exchange twice.</p>
+    </section>
+
+    <section class="card" id="assessment">
+      <h2>End-of-lesson assessment</h2>
+      <p>Type each answer from memory. Mastery target for this lesson: 4/4.</p>
+
+      <div class="quiz-item">
+        <label for="q1">1) What are you doing today? (formal)</label>
+        <input id="q1" type="text" />
+      </div>
+
+      <div class="quiz-item">
+        <label for="q2">2) Today I am going to work.</label>
+        <input id="q2" type="text" />
+      </div>
+
+      <div class="quiz-item">
+        <label for="q3">3) And you?</label>
+        <input id="q3" type="text" />
+      </div>
+
+      <div class="quiz-item">
+        <label for="q4">4) Today I am going to visit a family.</label>
+        <input id="q4" type="text" />
+      </div>
+
+      <button id="gradeBtn" type="button">Grade Assessment</button>
+      <div id="result" class="feedback" aria-live="polite"></div>
+      <div id="details"></div>
+    </section>
+
+    <section class="card">
+      <h2>Primary source for this lesson</h2>
+      <p>Continue with the early lessons of <a href="https://www.languagetransfer.org/free-courses-1#complete-spanish">Language Transfer: Complete Spanish</a>. Repeat each short phrase out loud and connect it to a real plan for today.</p>
+      <p class="meta">Why this source: free, structured, speech-first, and practical for quick daily sessions.</p>
+    </section>
+
+    <section class="card">
+      <h2>Spaced follow-up (tomorrow, 3 minutes)</h2>
+      <ul>
+        <li>Say the four-line exchange from memory twice.</li>
+        <li>Change the activity to match your actual plan.</li>
+        <li>Review any missed line, then repeat the full exchange once more.</li>
+      </ul>
+    </section>
+
+    <section class="callout">
+      <strong>Ask follow-up questions:</strong> Ask your teacher-agent for a pronunciation check, a substitution drill, or a roleplay about today’s plans.
+    </section>
+
+    <script>
+      const gradeBtn = document.getElementById("gradeBtn");
+      const result = document.getElementById("result");
+      const details = document.getElementById("details");
+
+      gradeBtn.addEventListener("click", () => {
+        const items = [
+          {
+            prompt: "What are you doing today? (formal)",
+            accepted: ["que hace usted hoy", "que hace hoy"],
+            userAnswer: () => document.getElementById("q1").value,
+          },
+          {
+            prompt: "Today I am going to work.",
+            accepted: ["hoy voy a trabajar"],
+            userAnswer: () => document.getElementById("q2").value,
+          },
+          {
+            prompt: "And you?",
+            accepted: ["y usted"],
+            userAnswer: () => document.getElementById("q3").value,
+          },
+          {
+            prompt: "Today I am going to visit a family.",
+            accepted: ["hoy voy a visitar a una familia"],
+            userAnswer: () => document.getElementById("q4").value,
+          },
+        ];
+
+        const scored = window.quizHelpers.scoreQuiz(items);
+        const passed = scored.correct === scored.total;
+
+        result.className = "feedback " + (passed ? "ok" : "warn");
+        result.textContent = "Score: " + scored.correct + "/" + scored.total + (passed ? " - Mastery reached." : " - Review and retry.");
+
+        const list = document.createElement("ul");
+        scored.details.forEach((d) => {
+          const li = document.createElement("li");
+          li.textContent = (d.isCorrect ? "Correct: " : "Review: ") + d.prompt + (d.isCorrect ? "" : " (target: " + d.expected + ")");
+          list.appendChild(li);
+        });
+
+        details.innerHTML = "";
+        details.appendChild(list);
+      });
+    </script>
+
+    <p class="meta">Next lesson will adapt to weak items from this assessment.</p>
+    <p><a href="0002-names-and-where-you-are-from.html">Back to Lesson 0002: Names and Where You Are From</a> | <a href="0004-likes-and-preferences.html">Go to Lesson 0004: Likes and Preferences</a></p>
+    <p><a href="0000-course-index.html">Course Index</a></p>
+  </main>
+</body>
+</html>
