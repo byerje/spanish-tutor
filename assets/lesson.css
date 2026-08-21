@@ -112,6 +112,14 @@ select {
   margin: 0.8rem 0;
 }
 
+#flashcards button {
+  margin: 0.2rem 0.4rem 0.2rem 0;
+}
+
+#flashcards [data-role="prompt"] {
+  font-size: 1.25rem;
+}
+
 .feedback {
   margin-top: 0.8rem;
   font-weight: 600;

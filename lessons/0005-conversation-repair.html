@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,6 +6,8 @@
   <title>Lesson 0005: Conversation Repair</title>
   <link rel="stylesheet" href="../assets/lesson.css" />
   <script defer src="../assets/quiz.js"></script>
+  <script defer src="../assets/vocab.js"></script>
+  <script defer src="../assets/flashcards.js"></script>
 </head>
 <body>
   <main>
@@ -50,6 +52,31 @@
         </div>
       </div>
       <p>Practice the sequence with a deliberately fast reading, then use the repair phrases until the exchange is clear.</p>
+    </section>
+
+    <section class="card" id="flashcards" data-lesson="0005">
+      <h2>Flashcards (optional)</h2>
+      <p>You will see the English prompt. Type the Spanish, then click Check.</p>
+      <p>
+        <button type="button" data-action="start-lesson">Lesson flashcards</button>
+        <button type="button" data-action="start-cumulative">Review flashcards (this + previous lessons)</button>
+      </p>
+
+      <div data-role="session" hidden>
+        <p class="meta" data-role="progress"></p>
+        <p><strong data-role="prompt"></strong></p>
+        <div class="quiz-item">
+          <label for="flashcardAnswer">Spanish</label>
+          <input id="flashcardAnswer" type="text" data-role="answer" autocomplete="off" />
+        </div>
+        <p>
+          <button type="button" data-action="check">Check</button>
+          <button type="button" data-action="next" hidden>Next</button>
+        </p>
+        <div class="feedback" data-role="feedback" aria-live="polite"></div>
+      </div>
+
+      <div class="feedback" data-role="summary" aria-live="polite" hidden></div>
     </section>
 
     <section class="card" id="assessment">
