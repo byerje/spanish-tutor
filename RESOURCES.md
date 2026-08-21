@@ -5,8 +5,8 @@
 - [FSI Spanish Basic Course (Public Domain)](https://www.fsi-language-courses.org/fsi-spanish-basic-course/)
   Structured, drill-heavy training focused on speaking and listening. Use for: high-repetition oral pattern practice.
 
-- [Language Transfer: Complete Spanish](https://www.languagetransfer.org/free-courses-1#complete-spanish)
-  Free audio course emphasizing understanding and speaking patterns. Use for: short daily listening + production sessions.
+- [SpanishPod101 beginner Spanish](https://www.spanishpod101.com/)
+  Beginner-focused audio lessons with transcripts and patterned speaking drills. Use for: short spoken practice and useful everyday phrases.
 
 - [Diccionario de la lengua espanola (RAE)](https://dle.rae.es/)
   Authoritative Spanish dictionary from Real Academia Espanola. Use for: checking precise meaning and usage.
